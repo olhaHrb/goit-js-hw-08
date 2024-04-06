@@ -77,31 +77,9 @@ const createMarkup = images.map(({ preview, original, description }) => {
 }).join('');
 galleryContainer.insertAdjacentHTML("beforeend", createMarkup)
 
-//        const galleryItem = document.createElement("li");
-//        galleryItem.classList.add("gallery-item");
-    //        return galleryItem;
-    
-//    const imgArr = [];
-//    for (const{preview, original, description} of arr) {
-//        const image = document.createElement("img");
-//        image.classList.add("gallery-image");
-//        image.src = preview;
-//        image.alt = description;
-//        imgArr.push(image);
-//    }
-//    return imgArr;
-
-//createMarkup(images);
-//galleryContainer.append(createMarkup());
-
-
-
-//const img = document.querySelector(".gallery");
-
-
 const imgClick = (event) => {
     event.preventDefault();
+    console.log(event.target.dataset.source);
 };
 galleryContainer.addEventListener("click", imgClick);
-
 
