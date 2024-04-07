@@ -79,7 +79,16 @@ galleryContainer.insertAdjacentHTML("beforeend", createMarkup)
 
 const imgClick = (event) => {
     event.preventDefault();
-    console.log(event.target.dataset.source);
+    if (!event.target.classList.contains("gallery-image")) {
+        return;
+   } 
+//    console.log(event.target.dataset.source);
+    const instance = basicLightbox.create(`
+	<div class="modal">
+        <img src=${event.target.dataset.source} alt=${event.target.alt}
+    </div>
+    `);
+    instance.show();
 };
 galleryContainer.addEventListener("click", imgClick);
 
